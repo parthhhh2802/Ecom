@@ -65,7 +65,10 @@ const Navbar = () => {
           src={assets.search_icon}
           className="w-12 cursor-pointer hover:scale-110 transition"
           alt="search"
-          onClick={() => setShowSearch(true)}
+          onClick={() => {
+            setShowSearch(true);
+            navigate('/collection');
+          }}
         />
 
         {/* Profile Dropdown */}

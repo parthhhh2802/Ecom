@@ -16,6 +16,7 @@ const Add = ({token}) => {
   const [price, setPrice] = React.useState("");
   const [category, setCategory] = React.useState("Men");
   const [subCategory, setSubCategory] = React.useState("Topwear");
+  const [brand, setBrand] = React.useState("Nike");
   const [bestseller, setBestseller] = React.useState(false);
   const [sizes, setSizes] = React.useState([]);
 
@@ -33,6 +34,7 @@ const Add = ({token}) => {
       formData.append("price", price);
       formData.append("category", category);
       formData.append("subCategory", subCategory);
+      formData.append("brand", brand);
       formData.append("bestseller", bestseller);
       formData.append("sizes", JSON.stringify(sizes));
 
@@ -111,6 +113,19 @@ const Add = ({token}) => {
         <div>
           <p className="mb-2 ">Product Price</p>
           <input onChange={(e)=>setPrice(e.target.value)} value={price} className="w-full px-3 py-2 sm:w-[120px]" type="number" placeholder="24"></input>
+        </div>
+        <div>
+          <p className="mb-2 ">Product Brand</p>
+          <select onChange={(e)=>setBrand(e.target.value)} className="w-full px-3 py-2 sm:w-[120px]">
+            <option value="Nike">Nike</option>
+            <option value="Louis Vuitton">Louis Vuitton</option>
+            <option value="Hermès">Hermès</option>
+            <option value="polo">Polo</option>
+            <option value="Reebok">Reebok</option>
+            <option value="Zara">Zara</option>
+            <option value="H&M">H&M</option>
+            <option value="Other">Other</option>
+          </select>
         </div>
       </div>
 

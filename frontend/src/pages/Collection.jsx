@@ -186,6 +186,7 @@ const Collection = () => {
                 image={item?.images?.[0] || item?.image?.[0] || ""}
                 name={item?.name || ""}
                 price={item?.price ?? 0}
+                brand={item?.brand || ""}
               />
             </div>
           ))}

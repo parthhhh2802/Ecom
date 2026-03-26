@@ -56,10 +56,11 @@ const List=({token})=>{
     <div className="flex flex-col gap-2">
       {/* List table title */}
 
-      <div className="hidden md:grid grid-cols-[1fr_3fr_1fr_1fr_1fr] items-center py-1 px-2 border bg-gray-100 text-sm ">
+      <div className="hidden md:grid grid-cols-[1fr_3fr_1fr_1fr_1fr_1fr] items-center py-1 px-2 border bg-gray-100 text-sm ">
         <b>Image</b>
         <b>Name</b>
         <b>Category</b>
+        <b>Brand</b>
         <b>Price</b>
         <b className="text-center">Action</b>
       </div>
@@ -76,10 +77,11 @@ const List=({token})=>{
         // ))
 
         list.map((item,index)=>(
-          <div key={index} className="hidden md:grid grid-cols-[1fr_3fr_1fr_1fr_1fr] items-center py-1 px-2 border text-sm ">
+          <div key={index} className="hidden md:grid grid-cols-[1fr_3fr_1fr_1fr_1fr_1fr] items-center py-1 px-2 border text-sm ">
             <img className="w-16 h-16 object-cover" src={item.images[0]} alt={item.name} />
             <p>{item.name}</p>
             <p>{item.category}</p>
+            <p>{item.brand || "Other"}</p>
             <p>{currency}{item.price}</p>
             <button onClick={()=>removeProduct(item._id)} className="bg-red-500 text-white px-3 py-1 rounded-md mx-auto">Delete</button>
           </div>
