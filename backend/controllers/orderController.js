@@ -7,10 +7,10 @@ import razorpay from 'razorpay';
 const deliveryCharge = 10;
 
 // Gateway Instances (make sure to add these to your .env)
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || '');
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || 'sk_test_YOUR_STRIPE_SECRET_KEY');
 const razorpayInstance = new razorpay({
-    key_id: process.env.RAZORPAY_KEY_ID || '',
-    key_secret: process.env.RAZORPAY_KEY_SECRET || '',
+    key_id: process.env.RAZORPAY_KEY_ID || 'rzp_test_YOUR_RAZORPAY_KEY',
+    key_secret: process.env.RAZORPAY_KEY_SECRET || 'YOUR_RAZORPAY_SECRET',
 });
 
 // placing order using COD method
